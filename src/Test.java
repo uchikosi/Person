@@ -3,16 +3,23 @@ public class Test {
 	public static void main(String[] args){
 	Person taro = new Person();
 //	new =インスタンス化(コピー) したものを変数 Aに代入
+//	personクラスの中に入っている各変数をnowで呼び出して、
+//	Perosn()で新しい値を代入（更新）している
 	taro.name="山田太郎";
 	taro.age=20;
 	taro.phoneNumber = "080-2222-2222";
 	taro.address ="ccc@ccc";
+//
 
 	System.out.println(taro.name);
 	System.out.println(taro.age);
 	System.out.println(taro.phoneNumber);
 	System.out.println(taro.address);
 
+//	「taro.talk();」はtalk()メソッドでpersonクラスの中に入っている「System.out.println(this.name + “が話す”);」が呼びされ、
+//	「this.name」は、このインスタンス（今回だとPersonクラスのインスタンスである taro 内の「public String name;」）の name」をさしています。
+//	 Test クラスの「taro.name=”山田太郎”」により、taro インスタンスの name フィールドに「山田太郎」が代入されます。
+//	 結果「山田太郎が話す」ということになります。
 
 	taro.talk();
 	taro.walk();
@@ -63,29 +70,29 @@ public class Test {
 	uchikosi.walk();
 	uchikosi.run();
 
-	Person aibo = new Person();
+	Robot aibo = new Robot();
 	aibo.name= "犬型ロボット";
 
-	Person asimo = new Person();
+	Robot asimo = new Robot();
 	asimo.name="ダンスロボット";
 
-	Person pepper = new Person();
+	Robot pepper = new Robot();
 	pepper.name="接客ロボット";
 
-	System.out.println(pepper.name);
-	pepper.talk();
-	pepper.walk();
-	pepper.run();
-	System.out.println(asimo.name);
-	asimo.talk();
-	asimo.walk();
-	asimo.run();
 	System.out.println(aibo.name);
 	aibo.talk();
 	aibo.walk();
 	aibo.run();
 
+	System.out.println(asimo.name);
+	asimo.talk();
+	asimo.walk();
+	asimo.run();
 
+	System.out.println(pepper.name);
+	pepper.talk();
+	pepper.walk();
+	pepper.run();
 	}
 
 
